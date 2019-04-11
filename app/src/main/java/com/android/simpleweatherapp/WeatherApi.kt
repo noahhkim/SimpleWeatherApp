@@ -10,18 +10,19 @@ import retrofit2.http.Query
 
 interface WeatherApi {
     @GET("/data/2.5/weather")
-    fun retrieveWeather(@Query("appid") apiKey: String, @Query("q") city: String):
+    fun retrieveWeather(@Query("appid") apiKey: String,
+                        @Query("q") city: String,
+                        @Query("units") units: String):
             Observable<WeatherResponse>
 
     companion object Factory {
-        val retrofit: Retrofit = Retrofit.Builder()
+        private val retrofit: Retrofit = Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-        val create = retrofit.create(WeatherApi::class.java)
-
+        val create: WeatherApi = retrofit.create(WeatherApi::class.java)
     }
 
 }

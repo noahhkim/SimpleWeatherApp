@@ -7,34 +7,60 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editText"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/search_background"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:hint="Search" />
+        android:layout_height="150dp">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edit_text_shape"
+            android:hint="Search"
+            android:imeOptions="actionSearch"
+            android:padding="8dp"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/weatherText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Sunny" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/locationText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Beirut, Lebanon"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/degreeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="15 degree C"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
 
 
 </LinearLayout>
